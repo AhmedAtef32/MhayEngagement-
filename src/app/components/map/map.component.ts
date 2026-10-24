@@ -1,13 +1,10 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
 const MAP_EMBED =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3093.0581057500985!2d29.719747599999994!3d31.05575679999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f593c9b3baefbb%3A0xfc93a2aafcae7555!2sRadisson%20Blu%20Hotel%20%26%20Convention%20Center%2C%20Alexandria!5e1!3m2!1sen!2seg!4v1781124486148!5m2!1sen!2seg';
-
+  'https://maps.google.com/maps?q=Royal%20Lamour%20Classic%2C%20Alexandria%2C%20Egypt&output=embed';
 const DIRECTIONS_URL =
-  'https://www.google.com/maps/place/Radisson+Blu+Hotel+%26+Convention+Center,+Alexandria/@31.0557568,29.7197476,17z/data=!3m1!4b1!4m6!3m5!1s0x14f593c9b3baefbb:0xfc93a2aafcae7555!8m2!3d31.0557568!4d29.7197476';
-
+  'https://www.google.com/maps/dir/?api=1&destination=31.1855941,29.9154707';
 @Component({
   selector: 'app-map',
   standalone: true,
@@ -24,11 +21,10 @@ const DIRECTIONS_URL =
             Our Location
           </h2>
           <p class="text-gray-600 text-lg md:text-xl font-serif">
-            Radisson Blu Hotel &amp; Convention Center
+            Royal Lamour Classic
           </p>
         </div>
       </div>
-
       <div class="max-w-6xl mx-auto">
         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
           @if (mapEmbedUrl()) {
@@ -36,24 +32,24 @@ const DIRECTIONS_URL =
               [src]="mapEmbedUrl()"
               width="100%"
               height="500"
-              style="border:0;"
-              allowfullscreen=""
+              style="border: 0"
+              allowfullscreen
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              title="Royal Lamour Classic Location"
             ></iframe>
           }
-
           <div
             class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 md:p-8"
           >
             <div class="text-white">
               <h4 class="text-lg md:text-2xl font-serif font-bold mb-2">
-                Radisson Blu Hotel &amp; Convention Center
+                Royal Lamour Classic
               </h4>
               <p class="text-sm md:text-base text-gray-300 mb-3">
                 Alexandria, Egypt
               </p>
-              <div class="flex gap-4">
+              <div class="flex flex-wrap gap-4">
                 <a
                   [href]="directionsUrl"
                   target="_blank"
@@ -81,11 +77,9 @@ const DIRECTIONS_URL =
 })
 export class MapComponent implements OnInit {
   private readonly sanitizer = inject(DomSanitizer);
-
   readonly mapEmbedUrl = signal<SafeResourceUrl | null>(null);
   readonly directionsUrl = DIRECTIONS_URL;
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.mapEmbedUrl.set(
       this.sanitizer.bypassSecurityTrustResourceUrl(MAP_EMBED),
     );
