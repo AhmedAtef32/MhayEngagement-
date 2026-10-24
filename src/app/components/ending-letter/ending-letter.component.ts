@@ -87,7 +87,9 @@ import { CommonModule } from '@angular/common';
                   </p>
                 </div>
               </div>
-              <p class="text-gray-600 text-sm">July 12, 2026 · Alexandria</p>
+              <p class="text-gray-600 text-sm">
+                November 19, 2026 · Alexandria
+              </p>
             </div>
           </div>
         </div>
