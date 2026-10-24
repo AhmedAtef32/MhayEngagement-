@@ -46,29 +46,12 @@ import { CommonModule } from '@angular/common';
               Dear Loved Ones,
             </p>
             <p class="text-base md:text-lg">
-              With hearts full of joy and gratitude, we are excited to share one
-              of the most beautiful moments of our lives with you. Our
-              engagement marks the beginning of a new chapter in our love story,
-              filled with hope, happiness, and dreams of a wonderful future
-              together.
+              With hearts full of joy, we’re thrilled to share the news of our
+              engagement! ♥️
             </p>
             <p class="text-base md:text-lg">
-              We feel truly blessed to have family and friends who have filled
-              our lives with love, kindness, and support. Having you as part of
-              our journey makes this special occasion even more meaningful, and
-              we would be delighted to share our happiness with you.
-            </p>
-            <p class="text-base md:text-lg">
-              As we take this beautiful step together, we pray that God blesses
-              our relationship, brings our hearts closer, and fills the days
-              ahead with love, understanding, and countless reasons to smile. We
-              look forward to celebrating this precious beginning surrounded by
-              the people who mean the most to us.
-            </p>
-            <p class="text-base md:text-lg">
-              Thank you for being part of our story and for making our lives
-              brighter with your love and blessings. We hope this day becomes a
-              beautiful memory that we will all cherish for years to come.
+              Having our favorite people by our side makes this new chapter even
+              more special, and we can't wait to celebrate together!
             </p>
             <div class="pt-6 border-t border-gold-200">
               <p class="text-lg md:text-xl text-gold-700 font-italic">
